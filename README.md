@@ -47,7 +47,7 @@ You will implement this site using Express, Mongoose, EJS, and CSS or SASS.
         1. Rating
         1. Price
         1. Quantity
-    - You are welcome to add any additional properties you sih to this schema.
+    - You are welcome to add any additional properties that you would like to this schema.
 - Create your seed data.
 
 
