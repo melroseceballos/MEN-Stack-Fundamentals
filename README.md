@@ -36,7 +36,7 @@ You will implement this site using Express, Mongoose, EJS, and CSS or SASS.
 ### Planning
 - Create a route table that explains lays out the REST, HTTP, and CRUD actions of each route in your application.
 - Wireframe each page.
-- Create a `README` inside the `express-store` folder that conatins your route table and wireframes.
+- Create a `README` inside the `express-store` folder that contains your route table and wireframes.
 
 ### Set Up
 - Create all the folders and files you will need.
@@ -65,6 +65,10 @@ You will implement this site using Express, Mongoose, EJS, and CSS or SASS.
     - **HINT**: Look up conditional rendering in EJS using `if..else` statements or ternary operators
 
 - Must contain a link back to the index route.
+
+
+### Seed Route
+- Create a route that will eliminate all the products in your database and then re-populate it with your seed data.
 
 
 ### Bonus
