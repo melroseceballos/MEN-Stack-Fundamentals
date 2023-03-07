@@ -31,6 +31,17 @@ You will implement this site using Express, Mongoose, EJS, and CSS or SASS.
 - Maintain consistent CSS styling throughout the site. Using a CSS framework may be beneficial for this.
 - Provide a link to any resources from which you obtained code, and be able to explain the purpose of all the code within your application.
 
+### Style Inspiration 
+See some previous student's examples for some inspiration for your store.
+
+<details><summary><strong>NeoBoutique</strong></summary>
+<img src="https://user-images.githubusercontent.com/17508245/28861521-1d513946-7716-11e7-8bed-fe1194f73a2d.png">
+</details>
+
+<details><summary><strong>flow.hack</strong></summary>
+<img src="https://user-images.githubusercontent.com/29133264/28857343-c3c537e6-76fd-11e7-8104-5ea76de35113.png">
+</details>
+
 
 ## Part 1 - Index, Show, and Seed Routes
 ### Planning
@@ -71,7 +82,43 @@ You will implement this site using Express, Mongoose, EJS, and CSS or SASS.
 - Create a route that will eliminate all the products in your database and then re-populate it with your seed data.
 
 
-### Bonus
-- Include a search bar on the index route that will allow users to search for items
+## Part 2 - All Other RESTful Routes
+### New & Create Routes
+- Create a link to a New Product form on the home page of your store.
+- When submitted, the New Product form will create a new product in the database and redirect the user to the new product's show page.
+    - Ensure your form aligns with your product schema specifications
+    - If your schema calls for default values, consider how you would set defaults in your inputs.
+    - **HINT:** The inputs must have a `name` attribute that matches the respective property in your schema.
+
+
+### Edit & Update Routes
+- Create a link to a New Product form on the show page of each product.
+- When submitted, the New Product form will create a new product in the database and redirect the user to the updated product's show page.
+    - Ensure your form aligns with your product schema specifications
+    - Pre-populate your form with the product data
+- Create a purchase button on the show page of each product. When pressed, it will decrement the quantity of the product in the database.
+    - **HINT:** Browse the MongoDB and Mongo documentation. What atomic operator could be useful for this?
+
+
+### Delete Route
+- Create a delete button on the show page of each product. When pressed, it will remove the product from the database and redirect the user to the home page.
+
+
+## Extra Hints
+<details>
+<summary><strong>Purchase Button</strong></summary>
+
+Check out the [`$inc` operator](https://www.mongodb.com/docs/manual/reference/operator/update/inc/)
+</details>
+
+<details>
+<summary><strong>Delete Route</strong></summary>
+
+Remember to wrap the delete button in a `<form>` element and use `method-override`
+</details>
+
+
+## Bonus
+- Include a search bar on the index route that will allow users to search for items.
 - Create an additional route for an `About` page.
 - Organize products by category. Create logic that will allow users to naviagte to specific routes that display only products in a given category.
