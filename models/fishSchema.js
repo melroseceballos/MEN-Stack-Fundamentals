@@ -10,6 +10,4 @@ const fishSchema = new mongoose.Schema({
 })
 
 // EXPORT THE SCHEMA AS A MONGOOSE MODEL 
-module.exports = mongoose.model{
-    Fish = require('./fishSchema') // <----  that points to the file that the schema is in
-}
+module.exports = mongoose.model("Fish", fishSchema) // <----  that points to the file that the schema is in

@@ -1,9 +1,9 @@
 // REQUIRING MODULES HERE
 require('dotenv').config()
 const path = require('path')
-const express = require('path')
+const express = require('express')
 const livereload = require('livereload')
-const connectLiveReload = required('connect-livereload');
+const connectLiveReload = require('connect-livereload');
 
 // REQUIRED THE DATABASE CONNECTION AND CONTENTS IN MODEL FOLDER
 const db = require('./models')
@@ -29,7 +29,7 @@ const liveReloadServer = livereload.createServer();
     app.use(connectLiveReload());
 
     // MOUNTING ROUTE TO LANDING PAGE
-   app.get('/', function (res,req){
+   app.get('/', function (req,res){
     res.send("AFV Adoption Home")
    })
 

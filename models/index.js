@@ -9,7 +9,13 @@ const mongodburi=process.env.MONGODBURI;
     console.log("You are now connected to" , mongodburi);})
 ().catch(err => console.log('Failed to connect: \n' + err))
 
-// GET MONGOOSE MODEL
+// GETTING FISH SCHEMA
 module.exports ={
     Fish: require('./fishSchema')
+}
+
+// GETTING SEED DATA
+module.exports = {
+    Fish: require('./fish'),
+    seedPets: require('./seed')
 }
