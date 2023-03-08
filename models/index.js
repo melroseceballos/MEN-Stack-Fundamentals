@@ -8,3 +8,8 @@ const mongodburi=process.env.MONGODBURI;
     await mongoose.connect(mongodburi);
     console.log("You are now connected to" , mongodburi);})
 ().catch(err => console.log('Failed to connect: \n' + err))
+
+// GET MONGOOSE MODEL
+module.exports ={
+    Fish: require('./fishSchema')
+}
