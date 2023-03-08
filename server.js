@@ -9,7 +9,8 @@ const connectLiveReload = require('connect-livereload');
 const db = require('./models')
 
 // REQUIRED TO LOOK INTO FISH ROUTES WHEN PET ID IS PULLED
-const petsCTRL = require ('./controllers/fishRoutes')
+const petsCTRL = require ('./controllers/fishRoutes');
+const fish = require('./models/seed');
 
 
 // CREATE THE EXPRESS APP
@@ -60,9 +61,9 @@ const liveReloadServer = livereload.createServer();
 // MOUNT TO LANDING PAGE
 app.get('/', function(req,res){
     db.Fish.find({isFeatured: true})
-    .then(pets => {
+    .then(fish => {
         res.render('home',{
-            Fish: pets
+            Fish: fish
         })
     })
 });
