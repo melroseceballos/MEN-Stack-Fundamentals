@@ -26,17 +26,12 @@ const liveReloadServer = livereload.createServer();
     });
 
     // CONFIGURING THE EXPRESS APP
-    app.set("viewengine", "ejs")
+    app.set("view engine", "ejs")
     app.set("views",path.join(__dirname, "views"));
     
     // MIDDLEWARE == WHAT'S BETWEEN DATABASE AND APP
     app.use(express.static('public'))
     app.use(connectLiveReload());
-
-    // MOUNTING ROUTE TO LANDING PAGE
-   app.get('/', function (req,res){
-    res.send("AFV Adoption Home")
-   })
 
    // ROUTING TO /SEED PAGE
    app.get('/seed', function(req,res){

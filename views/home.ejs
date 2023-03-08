@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+     <% - include('./partials/nav.ejs')  %>
 
     <main>
         <section class="Welcome">
@@ -22,7 +22,7 @@
         <section class="featured-pets">
             <h2>Featured Pets</h2>
              <ul class="pet-grid">
-                <% for (let pet of pets) { %>
+                <% for (let fish of Fish) { %>
                 <li>
                     <figure>
                         <img src="<%= fish.photo %>">
