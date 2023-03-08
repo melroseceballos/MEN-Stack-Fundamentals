@@ -57,7 +57,15 @@ const liveReloadServer = livereload.createServer();
     // TELLS APP TO LOOK HERE WHEN ID IS PULLED
     app.use('/fishRoutes', petsCTRL)
 
-
+// MOUNT TO LANDING PAGE
+app.get('/', function(req,res){
+    db.Fish.find({isFeatured: true})
+    .then(pets => {
+        res.render('home',{
+            Fish: pets
+        })
+    })
+});
    // APP TO SHOW/LISTEN ON SPECIFIED PORT
    app.listen(process.env.PORT, function (){
     console.log('Express APP is listening to port', process.env.PORT);

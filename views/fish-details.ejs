@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: `${fish.name} | AFV Adoption Home`}) %>
+    <link rel="stylesheet" href="/styles/pet-details.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div>
+        <img src="<%= fish.photo %>">
+        <h2 class="fish-name"><%= fish.name %></h2>
+        <section>
+            <p><strong>Description:</strong> <%= fish.description %></p>
+        </section>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
