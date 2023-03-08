@@ -11,11 +11,6 @@ const mongodburi=process.env.MONGODBURI;
 
 // GETTING FISH SCHEMA
 module.exports ={
-    Fish: require('./fishSchema')
-}
-
-// GETTING SEED DATA
-module.exports = {
-    Fish: require('./fish'),
+    Fish: require('./fishSchema'),
     seedPets: require('./seed')
 }

@@ -8,6 +8,10 @@ const connectLiveReload = require('connect-livereload');
 // REQUIRED THE DATABASE CONNECTION AND CONTENTS IN MODEL FOLDER
 const db = require('./models')
 
+// REQUIRED TO LOOK INTO FISH ROUTES WHEN PET ID IS PULLED
+const petsCTRL = require ('./controllers/fishRoutes')
+
+
 // CREATE THE EXPRESS APP
 const app = express();
 
@@ -32,6 +36,27 @@ const liveReloadServer = livereload.createServer();
    app.get('/', function (req,res){
     res.send("AFV Adoption Home")
    })
+
+   // ROUTING TO /SEED PAGE
+   app.get('/seed', function(req,res){
+    // REMOVE ANY EXISTING STUFF IN SEED
+    db.Fish.deleteMany({})
+        .then(removedPets => {
+            console.log(`Removed ${removedPets.deletedCount} pets`)
+            // INSERTING PETS SEED HERE
+            db.Fish.insertMany(db.seedPets)
+            .then(addedPets =>{
+                console.log(`Added ${addedPets.length} pets to be adopted`)
+                res.json(addedPets)
+            })
+
+         })
+        console.log(db.Fish)
+    });
+
+    // TELLS APP TO LOOK HERE WHEN ID IS PULLED
+    app.use('/fishRoutes', petsCTRL)
+
 
    // APP TO SHOW/LISTEN ON SPECIFIED PORT
    app.listen(process.env.PORT, function (){
