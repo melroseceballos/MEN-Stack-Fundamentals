@@ -3,24 +3,15 @@
 
 <head>
     <%- include('./partials/header.ejs', {title: 'AFV Adoption Home'}) %>
-    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/fishDetails.css">
 </head>
 
 <body>
-     <%- include('./partials/nav.ejs')  %>
+    <%- include('./partials/nav.ejs') %>
 
-    <main>
-        <section class="Welcome">
-            <h2>Welcome to AFV Adoption Home</h2>
-        </section>
-
-        <section class="about">
-            <h2>About Us</h2>
-            <p> We are a hardworking network of Veterinary office that is dedicated to providing top-tier care for you furry babies! All the pets in here are surrenders that needs new homes!</p>
-        </section>
-
-        <section class="featured-pets">
-            <h2>Featured Pets</h2>
+    <div>
+        <section class="petsList">
+            <h2>Pets</h2>
              <ul class="pet-grid">
                 <% for (let fish of Fish) { %>
                 <li>
@@ -31,16 +22,15 @@
                         <div class="featured-info">
                             <h3><%= fish.Name %></h3>
                             <p class="describe"><%= fish.Description %></p>
-                            <a href="/fishRoutes<%= fish.id %>" class="btn">Learn More About Me!</a>
                         </div>
                     </figcaption>
                 </li>
                 <% } %>
             </ul> 
         </section>
-    </main>
+    </div>
 
-    <%- include('./partials/footer.ejs') %> 
+    <%- include('./partials/footer.ejs') %>
 </body>
 
 </html>

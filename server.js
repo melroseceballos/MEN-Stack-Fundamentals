@@ -32,6 +32,7 @@ const liveReloadServer = livereload.createServer();
     // MIDDLEWARE == WHAT'S BETWEEN DATABASE AND APP
     app.use(express.static('public'))
     app.use(connectLiveReload());
+    app.use(express.urlencoded({extended: true})); 
 
    // ROUTING TO /SEED PAGE
    app.get('/seed', function(req,res){
@@ -62,6 +63,10 @@ app.get('/', function(req,res){
             Fish: fish
         })
     })
+});
+
+app.get('*', function (req,res){
+    res.send('404 Erorr: Page Not Found')
 });
    // APP TO SHOW/LISTEN ON SPECIFIED PORT
    app.listen(process.env.PORT, function (){
