@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'AFV Adoption Home'}) %>
-    <link rel="stylesheet" href="../public/styles/fish-index.css">
+    <%- include('./partials/header.ejs', {title: 'AFV Adoption Home'}) %>
+    <link rel="stylesheet" href="/styles/fish-index.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
         <section class="listings">
             <h1>Available Pets</h1>
             <ul>
-                <% for (let fish of fish) { %>
+                <% for (let fish of Fish) { %>
                 <li>
                     <figure>
                         <img src="<%= fish.photo %>">

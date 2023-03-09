@@ -57,6 +57,7 @@ const liveReloadServer = livereload.createServer();
 app.get('/', function(req,res){
     db.Fish.find({isFeatured: true})
     .then(fish => {
+        console.log(fish)
         res.render('home',{
             Fish: fish
         })

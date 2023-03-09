@@ -1,7 +1,11 @@
 /* About section styles */
+.Welcome{
+    text-align: center;
+}
 .about {
     background-color: #fff;
     padding: 2rem;
+    text-align: center;
 }
 
 .about h2 {
@@ -11,6 +15,9 @@
 
 .about p {
     margin-bottom: 1rem;
+}
+.describe{
+    text-align: center;
 }
 
 /* Featured pets section styles */
@@ -41,7 +48,9 @@
     border-radius: 5px;
     overflow: hidden;
 }
-
+.btn{
+    color: blue;
+}
 figure {
     height: 70%;
 }

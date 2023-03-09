@@ -7,17 +7,16 @@ const router = express.Router()
 // REQUIRING THE DATABASE CONNECTION GET INFO FROM MODELS
 const db = require('../models')
 
-// ROUTES
+// INDEX ROUTE
 router.get('/', function(req,res ){
     db.Fish.find({})
         .then(pets => res.json(pets))
-    console.log("fishCTRL")
 })
 
-// WILL GET PET BY INDIVIDUAL ID
+// SHOW ROUTE = WILL GET PET BY ID
 router.get('/:id', function(req,res){
     db.Fish.findById(req.params.id)
-    .then(pet => res.json(pet))
+    .then(fish => res.render(fish))
     .catch(() => res.send('UH-OH PET NOT FOUND'))
 })
 
@@ -32,15 +31,5 @@ router.get('/', function(req, res){
     .catch(() => res.send ('UH OH PAGE NOT FOUND'))
 })
 
-// SHOW ROUTE BY ID
-router.get('/:id', function (req, res) {
-    db.Fish.findById(req.params.id)
-        .then(pet => {
-            res.render('fish-details', {
-                Fish: pet
-            })
-        })
-        .catch(() => res.send('404 Error: Page Not Found'))
-})
 // EXPORTING ROUTES TO SERVER.JS
 module.exports = router; 
