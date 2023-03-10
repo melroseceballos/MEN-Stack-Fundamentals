@@ -7,7 +7,7 @@ const db = require('../models')
 router.get('/new/:fishId', (req,res => {
     db.Fish.findById(req.params.fishId)
     .then( product => {
-        res.render('reviews/new-review', {Fish: fish})
+        res.render('/reviews/new-form', {Fish: fish})
     })
 }))
 
