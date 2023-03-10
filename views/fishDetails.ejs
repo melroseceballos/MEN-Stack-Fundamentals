@@ -19,23 +19,22 @@
                     </figure>
                     <figcaption>
                         <div class="featured-info">
-                            <h3><%= Fish.Name %></h3>
-                            <p class="describe"><%= Fish.Description %></p>
+                            <h3><%= fish.Name %></h3>
+                            <p class="describe"><%= fish.Description %></p>
                         </div>
                     </figcaption>
                 </li>
             </ul> 
         </section>
         <section class="actions">
-            <button class="btn" id="edit"><a href="/fishRoutes/<%= Fish._id %>/edit">Edit</a></button>
+            <button class="btn" id="edit"><a href="/fishRoutes/<%= fish._id %>/edit">Edit</a></button>
             <form method="POST" action="/fishRoutes/<%= Fish._id %>?_method=UPDATE">
-                <button class="btn" id="submit"><a href="/fishRoutes/<%= Fish._id %>/edit">Purchase</a></button>
+                <button class="btn" id="submit"><a href="/fishRoutes/<%= fish._id %>/edit">Purchase</a></button>
                 <form method="POST" action="/fishRoutes/<%= Fish._id %>?_method=POST">
-                    <button class="btn" id="delete"><a href="/fishRoutes/<%= Fish._id %>/edit">Delete</a></button>
+                    <button class="btn" id="delete"><a href="/fishRoutes/<%= fish._id %>/edit">Delete</a></button>
                     <form method="POST" action="/fishRoutes/<%= Fish._id %>?_method=DELETE">
             </form>
         </section>
-        
     </div>
 
     <%- include('./partials/footer.ejs') %>

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-// REQUIRING THE APPLICATION SCHEMA
-const applicationSchema = require('./application.js')
+
 
 // CREATING SCHEMA 
 const fishSchema = new mongoose.Schema({
@@ -11,7 +10,6 @@ const fishSchema = new mongoose.Schema({
     Quantity: {type: Number},
     photo: {type: String, required: "true"},
     isFeatured: {type: Boolean, default: false},
-    applications: [applicationSchema]
 })
 
 // EXPORT THE SCHEMA AS A MONGOOSE MODEL 
