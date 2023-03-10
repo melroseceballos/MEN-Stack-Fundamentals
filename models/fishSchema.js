@@ -10,6 +10,7 @@ const fishSchema = new mongoose.Schema({
     Quantity: {type: Number},
     photo: {type: String, required: "true"},
     isFeatured: {type: Boolean, default: false},
+    // review: [reviewSchema]
 })
 
 // EXPORT THE SCHEMA AS A MONGOOSE MODEL 
