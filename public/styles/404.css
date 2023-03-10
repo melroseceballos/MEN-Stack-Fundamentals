@@ -26,13 +26,21 @@ h1 {
     font-size: calc(36px + 2vw);
 }
 
-p,
-a {
+p{
     font-size: calc(20px + 0.5vw);
     text-decoration: none;
     margin-top: 2rem;
 }
+a {
+    font-size: calc(20px + 0.5vw);
+    text-decoration: none;
+    margin-top: 2rem;
+    color: blue;
+}
 
 a {
     margin-top: auto;
+}
+img{
+    height: 400px;
 }

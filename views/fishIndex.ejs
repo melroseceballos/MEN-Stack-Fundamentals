@@ -11,13 +11,13 @@
 
     <main>
         <section class="listings">
-            <h1>Available Pets</h1>
+            <h1 class="avail">Available Pets</h1>
             <ul>
                 <% for (let fish of Fish) { %>
                 <li>
                     <figure>
                         <img src="<%= fish.photo %>">
-                        <figcaption>
+                        <figcaption class="words">
                             <h4><%= fish.Name %></h4>
                             <p>Rating: <%=fish.Rating%></p>
                             <p>Price: <%=fish.Price%></p>

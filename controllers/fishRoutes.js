@@ -46,34 +46,48 @@ router.get('/:id', function (req, res) {
     db.Fish.findById(req.params.id)
         .then(fish => {
             console.log(fish)
-            res.render('FishDetails', {
+            res.render('fishDetails', {
                 Fish: fish
            })
         })
-        .catch(() => res.send('Uh-oh Pet Not Found'))
+        .catch(() => res.render('404'))
 })
 
 // EDIT ROUTE
-router.get('/:id/edit',(req,res)=>{
+router.get('/:id/edit', (req, res) => {
     db.Fish.findById(req.params.id)
-    .then(fish => res.send('You\'ll be editing pet' + fish._id))
+        .then(pet => {
+            res.render('edit-form', {
+                fish: fish
+            })
+        })
 })
 
 // UPDATE ROUTE
-router.put('/:id', (req,res) => {
+router.put('/:id', (req, res) => {
     db.Fish.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    {new: true}
-)
-    .then(fish => res.json(fish))
+        req.params.id,
+        req.body,
+        { new: true }
+    )
+        .then(fish => res.redirect('/fishRoutes/' + fish._id))
 })
 
 // DESTROY ROUTE
 router.delete('/:id', (req,res)=>{
     db.Fish.findByIdAndRemove(req.params.id)
-    .then(fish => res.send('You deleted pet' + fish._id))
+    .then(() => res.redirect('/fishRoutes'))
 })
+
+// PURCHASE ROUTE
+router.put('/:id/purchase',(req,res) => {
+    db.Fish.findByIdAndUpdate(req.params.id,
+    {$inc: { quantity: -1}},
+    {new: true})
+    .then(fish => res.render('fishDetails',{
+        Fish:fish
+    })
+    )});
 
 // EXPORTING ROUTES TO SERVER.JS
 module.exports = router; 

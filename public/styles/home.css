@@ -1,9 +1,10 @@
 /* About section styles */
 .Welcome{
     text-align: center;
+    background-color: wheat;
 }
 .about {
-    background-color: #fff;
+    background-color: lightsalmon;
     padding: 2rem;
     text-align: center;
 }
@@ -19,11 +20,11 @@
 .describe{
     text-align: center;
 }
-
 /* Featured pets section styles */
 .featured-pets {
-    background-color: #f7f7f7;
+    background-color: wheat;
     padding: 2rem;
+    text-align: right;
 }
 
 .featured-pets h2 {
@@ -50,6 +51,8 @@
 }
 .btn{
     color: blue;
+    text-align: center;
+    margin-left: 80px;
 }
 figure {
     height: 70%;
@@ -67,4 +70,7 @@ figcaption {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+#name{
+    margin-right: 50px;
 }

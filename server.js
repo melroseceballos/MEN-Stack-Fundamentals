@@ -70,9 +70,10 @@ app.get('/', function(req,res){
 });
 
 app.get('*', function (req,res){
-    res.send('404 Erorr: Page Not Found')
+    res.render('404')
 });
    // APP TO SHOW/LISTEN ON SPECIFIED PORT
    app.listen(process.env.PORT, function (){
     console.log('Express APP is listening to port', process.env.PORT);
    });
+   

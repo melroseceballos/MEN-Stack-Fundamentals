@@ -2,8 +2,11 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: black;
 }
-
+.avail{
+    color: orange;
+}
 .listings {
     margin-top: 50px;
 }
@@ -33,7 +36,9 @@ main {
 }
 
 figcaption {
-    text-align: left;
+    text-align: center;
+    color: white;
+    
 }
 
 .listings li h4 {
