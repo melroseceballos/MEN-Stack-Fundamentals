@@ -4,6 +4,8 @@ const path = require('path')
 const express = require('express')
 const livereload = require('livereload')
 const connectLiveReload = require('connect-livereload');
+const methodOverride = require('method-override');
+
 
 // REQUIRED THE DATABASE CONNECTION AND CONTENTS IN MODEL FOLDER
 const db = require('./models')
@@ -33,6 +35,7 @@ const liveReloadServer = livereload.createServer();
     app.use(express.static('public'))
     app.use(connectLiveReload());
     app.use(express.urlencoded({extended: true})); 
+    app.use(methodOverride('_method'));
 
    // ROUTING TO /SEED PAGE
    app.get('/seed', function(req,res){

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/header.ejs', {title: 'Add a Listing | AFV Adoption Home'}) %>
+    <link rel="stylesheet" href="/styles/pet-form.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <h1>Surrender Form</h1>
+
+    <form method="POST" action="/fishRoutes">
+        <!-- Name input -->
+        <label for="Name">Name:</label>
+        <input type="text" id="name" name="Name" required>
+        <br>
+          <!-- Description input -->
+          <label for="Description">Description:</label>
+          <input type="text" id="breed" name="Description">
+          <br>
+            <!-- Rating input -->
+        <label for="Rating">Rating:</label>
+        <input type="text" id="rate" name="Rating">
+        <br>
+        <!-- Price input -->
+        <label for="Price">Price:</label>
+        <input type="number" id="price" name="Price" required>
+        <br>
+        <!-- Quantity input -->
+        <label for="Quantity">Quantity:</label>
+        <input type="number" id="quantity" name="Quantity" required>
+        <br>
+       <!-- Photo input -->
+       <label for="photo">Photo (URL):</label>
+       <input type="text" id="photo" name="photo" required>
+       <br>
+       <input type="submit" value="Create Pet">
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

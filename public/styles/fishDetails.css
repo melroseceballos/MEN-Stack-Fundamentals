@@ -35,3 +35,27 @@ p {
 strong {
     font-weight: bold;
 }
+.actions {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn a {
+    color: black;
+}
+
+#submit{
+    margin-right: 90px;
+    height: 40px;
+    width: 100px;
+}
+#edit{
+    height: 40px;
+    width: 100px;
+}
+#delete{
+    height: 40px;
+    width: 100px;
+}

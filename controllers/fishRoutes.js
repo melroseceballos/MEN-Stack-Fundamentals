@@ -29,15 +29,15 @@ router.get('/', function (req, res) {
             })
         })
 })
-// NEW ROUTE
+// FORM ROUTE
 router. get('/new',(req,res) =>{
-    res.send('You\'ve hit the new route!')
+    res.render('new-form')
 })
 
 // Create ROUTE THAT WHEN A POST REQUEST IS RECIEVED IT CREATES A NEW DOCUMENT
 router.post('/', (req,res) => {
     db.Fish.create(req.body)
-    .then(fish => res.json(fish))
+    .then(fish => res.redirect('/fishRoutes'))
 })
 
 
@@ -48,7 +48,7 @@ router.get('/:id', function (req, res) {
             console.log(fish)
             res.render('FishDetails', {
                 Fish: fish
-            })
+           })
         })
         .catch(() => res.send('Uh-oh Pet Not Found'))
 })
