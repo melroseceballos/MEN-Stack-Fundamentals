@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const reviewSchema = require('./reviewSchema');
 
 
 // CREATING SCHEMA 
@@ -10,7 +11,7 @@ const fishSchema = new mongoose.Schema({
     Quantity: {type: Number},
     photo: {type: String, required: "true"},
     isFeatured: {type: Boolean, default: false},
-    // review: [reviewSchema]
+    review: [reviewSchema]
 })
 
 // EXPORT THE SCHEMA AS A MONGOOSE MODEL 

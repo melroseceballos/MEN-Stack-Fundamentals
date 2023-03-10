@@ -82,12 +82,10 @@ router.delete('/:id', (req,res)=>{
 // PURCHASE ROUTE
 router.put('/:id/purchase',(req,res) => {
     db.Fish.findByIdAndUpdate(req.params.id,
-    {$inc: { quantity: -1}},
+    {$inc: { quantity: -1 }},
     {new: true})
-    .then(fish => res.render('fishDetails',{
-        Fish:fish
-    })
-    )});
+    .then(() => res.redirect('/fishRoutes/'))
+    });
 
 // EXPORTING ROUTES TO SERVER.JS
 module.exports = router; 

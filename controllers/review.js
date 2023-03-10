@@ -1,29 +1,25 @@
-// // Require the Mongoose package
-// const mongoose = require('mongoose')
-// const router = express.Router()
-// const db = require('../models')
+const express = require('express')
+const router = express.Router()
+const db = require('../models')
 
-// // Create a schema to define the properties of the review model
-// const reviewSchema = new mongoose.Schema(
-//     {
-//         title: {
-//             type: String,
-//             required: true
-//         },
-//         content: {
-//             type: String,
-//             required: true
-//         },
-//         // a review can only be created if it references an existing user._id
-//         reviewer: {
-//             type: mongoose.ObjectId,
-//             ref: 'User',
-//             required: true
-//         }
-//     },
-//     { timestamps: true }
-// );
 
-// // DO NOT export the schema as a Mongoose model. 
-// // The schema will be accessed in `models/restaurant.js`
-// module.exports = reviewSchema;
+//  NEW ROUTE REVIEW
+router.get('/new/:fishId', (req,res => {
+    db.Fish.findById(req.params.fishId)
+    .then( product => {
+        res.render('reviews/new-review', {Fish: fish})
+    })
+}))
+
+// CREATE ROUTE REVIEW  
+router.post('/create/:productId', (req,res) => {
+    db.Fish.findByIdAndUpdate(req.params.fishId, {$push: {review: req.body}},
+        {new: true}
+        )
+        .then(fish => {
+            res.redirect('/fishRoutes' + fish._id)
+        })
+})
+
+// EXPORT MODULE
+module.exports = router 

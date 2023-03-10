@@ -43,7 +43,7 @@ const fish =[
     Rating: "Good",
     Price: 0,
     Quantity: 200,
-    photo: "https://lh6.googleusercontent.com/Enc7Z8SW4_kIUT2jLNzakkUZUcMiAQiX9z6F6Kn9R7rrn20OZ8-923Vq646xUbJhsw0Njdpdr-tcu_ZXP9yTLtdiw726hPhmJusbOseCGpWRV0Qpe5eobMPbteOcLTmYIjoQ0vU2",
+    photo: "https://www.aquariadise.com/wp-content/uploads/2021/01/calico-goldfish-in-a-blue-background.jpg",
     isFeatured: true
 },
 {
