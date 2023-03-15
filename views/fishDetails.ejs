@@ -39,8 +39,15 @@
                 <form method="POST" action="/fishRoutes/<%= Fish._id %>?_method=DELETE">
                     <input class="btn" type="submit" value="Delete"/>
                 </form>
-                        <button class="btn" id="review"><a href="/reviews/new-review<%= Fish._id %>"">Leave A Review</a></button>
-                        <form method="PUT" action="'/:id'<%= Fish._id %>/buy?_method=PUT">
+                        <button class="btn" id="review"><a href="/reviews/<%=Fish._id%>">Leave A Review</a></button>
+                        <form method="PUT" action="'/create<%= Fish._id %>/buy?_method=PUT">
+            </form>
+            <form>
+                <% for (let review of Review) { %> 
+                    <p><%=review.reviewer%></p>
+                    <p><%=review.title%></p>
+                    <p><%=review.content%></p>
+                    <% } %>
             </form>
         </section>
     </div>

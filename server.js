@@ -5,6 +5,7 @@ const express = require('express')
 const livereload = require('livereload')
 const connectLiveReload = require('connect-livereload');
 const methodOverride = require('method-override');
+const reviewsCTRL = require('./controllers/review')
 
 
 // REQUIRED THE DATABASE CONNECTION AND CONTENTS IN MODEL FOLDER
@@ -36,6 +37,8 @@ const liveReloadServer = livereload.createServer();
     app.use(connectLiveReload());
     app.use(express.urlencoded({extended: true})); 
     app.use(methodOverride('_method'));
+    
+    
 
 
    // ROUTING TO /SEED PAGE
@@ -57,6 +60,7 @@ const liveReloadServer = livereload.createServer();
 
     // TELLS APP TO LOOK HERE WHEN ID IS PULLED
     app.use('/fishRoutes', petsCTRL)
+    app.use('/reviews', reviewsCTRL)
 
 // MOUNT TO LANDING PAGE
 app.get('/', function(req,res){

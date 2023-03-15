@@ -15,5 +15,4 @@ module.exports ={
     seedPets: require('./seed')
 }
 
-///////////////// REVIEWS /////////////
 

@@ -41,17 +41,7 @@ router.post('/', (req,res) => {
 })
 
 
-// SHOW ROUTE = WILL GET PET BY ID
-router.get('/:id', function (req, res) {
-    db.Fish.findById(req.params.id)
-        .then(fish => {
-            console.log(fish)
-            res.render('fishDetails', {
-                Fish: fish
-           })
-        })
-        .catch(() => res.render('404'))
-})
+
 
 // EDIT ROUTE
 router.get('/:id/edit', (req, res) => {
@@ -86,6 +76,18 @@ router.put('/:id/purchase',(req,res) => {
     {new: true})
     .then(() => res.redirect('/fishRoutes/'))
     });
+
+    // SHOW ROUTE = WILL GET PET BY ID
+router.get('/:id', function (req, res) {
+    db.Fish.findById(req.params.id)
+        .then(fish => {
+            console.log(fish)
+            res.render('fishDetails', {
+                Fish: fish
+           })
+        })
+        .catch(() => res.render('404'))
+})
 
 // EXPORTING ROUTES TO SERVER.JS
 module.exports = router; 

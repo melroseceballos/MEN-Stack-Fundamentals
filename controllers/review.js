@@ -4,21 +4,23 @@ const db = require('../models')
 
 
 //  NEW ROUTE REVIEW
-router.get('/new/:fishId', (req,res => {
-    db.Fish.findById(req.params.fishId)
-    .then( product => {
-        res.render('/reviews/new-form', {Fish: fish})
+router.get('/:id', (req,res) => {
+    console.log(req.body)
+    res.render('review-form' , {
+        id:req.params.id
     })
-}))
+})
 
 // CREATE ROUTE REVIEW  
-router.post('/create/:productId', (req,res) => {
-    db.Fish.findByIdAndUpdate(req.params.fishId, {$push: {review: req.body}},
+router.post('/create/:id', (req,res) => {
+    console.log(req.body)
+    db.Fish.findByIdAndUpdate(req.params.id, {$push: {review: req.body}},
         {new: true}
         )
-        .then(fish => {
-            res.redirect('/fishRoutes' + fish._id)
+        .then(review =>{
+            res.redirect(`/fishRoutes/${req.params.id}`);
         })
+       
 })
 
 // EXPORT MODULE
