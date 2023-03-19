@@ -2,10 +2,12 @@
 
 // REQUIRE MODULES
 const express = require('express')
+const { Fish } = require('../models')
 const router = express.Router()
 
 // REQUIRING THE DATABASE CONNECTION GET INFO FROM MODELS
 const db = require('../models')
+const fishSchema = require('../models/fishSchema')
 const fish = require('../models/seed')
 
 // HOME PAGE
@@ -34,7 +36,7 @@ router. get('/new',(req,res) =>{
     res.render('new-form')
 })
 
-// Create ROUTE THAT WHEN A POST REQUEST IS RECIEVED IT CREATES A NEW DOCUMENT
+// Create ROUTE 
 router.post('/', (req,res) => {
     db.Fish.create(req.body)
     .then(fish => res.redirect('/fishRoutes'))
@@ -83,7 +85,8 @@ router.get('/:id', function (req, res) {
         .then(fish => {
             console.log(fish)
             res.render('fishDetails', {
-                Fish: fish
+                Fish: fish,
+                Review: Fish.review
            })
         })
         .catch(() => res.render('404'))

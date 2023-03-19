@@ -24,6 +24,15 @@
                             <p>Rating: <%=Fish.Rating%></p>
                             <p>Price: <%=Fish.Price%></p>
                             <p>Quantity: <%=Fish.Quantity%></p>
+                            <ul>
+                              <% Fish.review.forEach(function(review) { %>
+                                <li><strong>Reviewer:</strong><%= review.reviewer %></li>
+                                <li> <strong>Title:</strong><%= review.title %></li>
+                                <li><strong>Content:</strong><%= review.content%></li>
+                                <li><br></li>
+                              <% }); %>
+                            </ul>
+
                         </div>
                     </figcaption>
                 </li>
@@ -39,13 +48,12 @@
                 <form method="POST" action="/fishRoutes/<%= Fish._id %>?_method=DELETE">
                     <input class="btn" type="submit" value="Delete"/>
                 </form>
-                <% for (let review of review) { %> 
-                    <% } %>
                         <button class="btn" id="review"><a href="/reviews/<%=Fish._id%>">Leave A Review</a></button>
                         <form method="PUT" action="'/create<%= Fish._id %>/buy?_method=PUT">
-                            
             </form>
-           
+           <section>
+             
+           </section>
         </section>
     </div>
 
